@@ -13,6 +13,7 @@ const int mc_index[][2]={{-1,0},{-1,1},{0,0},{0,1}};
 const int lS_index[][2]={{0,0},{0,1},{-1,1},{-1,2}};
 const int T_index[][2]={{0,0},{0,1},{-1,1},{0,2}};
 const int rS_index[][2]={{-1,0},{-1,1},{0,1},{0,2}};
+char preDraws[Xlength][Ylength+1];
 char Draws[Xlength][Ylength+1];
 char Draws_mc[Xlength][Ylength+1];
 char Save_mcs[Xlength][Ylength+1];
@@ -23,11 +24,7 @@ int mc_create();
 int control();
 int move(int **);
 int main(void){
-    srand(time(NULL));
-    //Draw();
-    int mcs[7]={0};
-    Rands(mcs);
-    for(int i=0;i<7;i++)printf(" %d ",mcs[i]);
+    ;
 }
 
 int preDraw(){
@@ -41,25 +38,17 @@ int preDraw(){
         Draws[Xlength-1][j]='#';   
      }
     Draws[Xlength-1][Ylength]='\000';
-
-   
-   // Draws[Fx][Fy]='6';
-  //  Draws[snakeL[0][0]][snakeL[0][1]]='D';
-    // for(int i=1;i<len;i++){
-      //       Draws[snakeL[i][0]][snakeL[i][1]]='0';
-        //}
-
 }
 
 int Draw(){
-    char temp[Xlength][Ylength+1];
-    memcpy(temp,Draws,sizeof temp);
+    memcpy(Draws,preDraws,sizeof Draws);
 
     for(int i=0;i<Xlength-1;i++)
         for(int j=1;j<Ylength-1;j++)
         {
             if(Save_mcs[i][j]=='0')temp[i][j]=Save_mcs[i][j];
         }
+
 
 
      printf("%s" ,temp);
@@ -90,6 +79,7 @@ int control(){
         }
     }
     return movec;
+
 }
 void Rands(int *mcs){
     int sum=0;
@@ -113,11 +103,20 @@ void Rands(int *mcs){
 }
 int move(int ** mcs_index){
     int is_coutiune=1;
+    int mcs[7]={0};
     while (1)
     {
-        
+        Rands(mcs);
+
+        for(int i=0;i<7;i++){
+            
 
 
+
+
+
+        }
+        /* code */
     }
     
 
