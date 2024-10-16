@@ -45,9 +45,22 @@ int main(void){
     //struct TreeARoot * temp2=Tree_Find_HEAD_Min(Root);
    // printf("\n %d\n",temp2->Child->value);
     Tree_Del(10,Root);
-    Tree_Find_HEAD(Root,13);
-   // printf("\n %d\n",temp2->Child->value);
-    ;
+    for(int i=0;i<11;i++)
+    Tree_Find_HEAD(Root,i);
+  // printf("\n %d\n",temp2->Child->value);
+
+//    int a[]={2,5,3,10,8,9,11,4,6,7};
+//     struct Tree * Root=Tree_Create(a[0]);
+//     for(int i=1;i<(sizeof a/sizeof a[0]);i++){
+//        Tree_list(Tree_Create(a[i]),Root);
+//     }
+//     struct TreeARoot * rtemp=Tree_Find_HEAD(Root,15);
+//     if(rtemp)
+//     printf(" %d ",rtemp->Root->value);
+//     else{
+//         printf("WARN");
+//     }
+//     ;
 }
 
 struct Tree *Tree_Create(int value){
@@ -181,15 +194,13 @@ struct TreeARoot * Tree_Find_HEAD(struct Tree * Root,int value){
             temp_root=temp;
              temp=temp->Left;
         } 
-        if(temp==NULL)
-            break;
        
     }
     Tree_Stack_rm();
+
     return NULL;
 }
 int Tree_Del(int value,struct Tree * Root){
-   
     printf(" \n ");
    struct TreeARoot * temp= Tree_Find_HEAD(Root,value);
    if(temp){
