@@ -4,12 +4,12 @@
 #include<time.h>
 #define DEBUG 0
 #define MAX_SIZE 1000000
-
 struct Line_List{
     short ID;
     char*Name;
     char*Group;
     short score;
+
 };
 struct Line_List * Line_List_Create();
 struct Line_List ** File_Read(int*,int*);

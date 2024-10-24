@@ -179,7 +179,6 @@ int Tree_Stack_pull(struct Tree * point){
 struct Tree_Stack * Tree_Stack_push(){
 
     struct Tree_Stack *temp=malloc(sizeof (struct Tree_Stack));
-    temp=Tree_Stack_head;
     if(Tree_Stack_head){
         Tree_Stack_head=Tree_Stack_head->next;
     }else{
