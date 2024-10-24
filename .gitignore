@@ -3,5 +3,5 @@
 *.out
 *.json
 *.zip
-**.vscode\
-**homework\
+**.vscode/
+**homework/
