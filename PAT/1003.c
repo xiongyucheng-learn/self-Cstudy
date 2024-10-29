@@ -18,7 +18,7 @@ int Yes_NO(char * chars,int num ){
                 return 0;
             }
         }
-        if(jp&&jt){
+        if(np==1&&nt==1){
             if(jt-jp==2&&(jp==num-1-jt)) return 1;
             else if(jt-jp<2) return 0;
             else
@@ -44,6 +44,7 @@ int Yes_NO(char * chars,int num ){
                 }
                 }
         }
+        else return 0;
 }
 int main(void){
     int NUM=0;
@@ -55,10 +56,10 @@ int main(void){
      }
     for(int i=0;i<NUM;i++){
         int j=0;
-        for (; j < 100&&chars[i][j]!='\0'; j++);
+        for (; j <= 100&&chars[i][j]!='\0'; j++);
         if(Yes_NO(chars[i],j)){
-            printf("%s  YES\n",chars[i]);
-        }else printf("%s  NO\n", chars[i]);
+            printf("YES\n");
+        }else printf("NO\n");
         
     }
 }
